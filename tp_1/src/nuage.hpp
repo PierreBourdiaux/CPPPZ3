@@ -14,4 +14,9 @@ public:
     Nuage();
    void ajouter(Point &p);
    int size()const;
+    std::vector<Point*>::const_iterator begin() const;
+    std::vector<Point*>::const_iterator end() const;
+    public:
+        using const_iterator = std::vector<Point*>::const_iterator;
+
 };

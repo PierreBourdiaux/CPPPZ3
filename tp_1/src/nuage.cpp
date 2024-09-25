@@ -7,3 +7,11 @@ void Nuage::ajouter(Point& p){
 }
 
 int Nuage::size()const{return taille;}
+
+
+Nuage::const_iterator Nuage::begin()const{
+    return v.begin();
+}
+Nuage::const_iterator Nuage::end()const {
+    return v.end();
+}
