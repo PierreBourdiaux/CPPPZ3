@@ -15,7 +15,7 @@ private:
 public:
     Polaire(double a, double b);
     Polaire();
-    Polaire(Cartesien&);
+    Polaire(const Cartesien& );
     void afficher(std::ostream& ss)const;
     double getDistance()const;
     double getAngle()const;

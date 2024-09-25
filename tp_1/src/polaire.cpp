@@ -4,7 +4,7 @@
 
 Polaire::Polaire(double a, double b):angle(a), distance(b){}
 Polaire::Polaire():angle(0.0), distance(0.0){}
-Polaire::Polaire(Cartesien& c)
+Polaire::Polaire(const Cartesien&  c)
 {
     Polaire p;
     c.convertir(p);

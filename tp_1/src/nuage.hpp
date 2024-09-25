@@ -23,3 +23,18 @@ public:
 
 
 Cartesien barycentre(Nuage n);
+struct BarycentreCartesien
+{
+    Cartesien operator()(Nuage n){
+        return barycentre(n);
+    }
+};
+
+struct BarycentrePolaire
+{
+    Polaire operator()(Nuage n){
+        Polaire p;
+        barycentre(n).convertir(p);
+        return p;
+    }
+};

@@ -7,6 +7,7 @@
 #include "polaire.hpp"
 
 class Polaire;
+class Nuage;
 
 class Cartesien : public Point
 {
@@ -25,6 +26,9 @@ public:
     void convertir(Cartesien&) const;
     void convertir(Polaire&) const;
 };
+
+
+
 
 
 

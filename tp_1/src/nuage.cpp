@@ -18,11 +18,11 @@ Nuage::const_iterator Nuage::end()const {
 
 Cartesien barycentre(Nuage n){
     Cartesien c;
-    int x =0;
-    int y = 0;
+    double x =0;
+    double y = 0;
     for(Nuage::const_iterator it = n.begin(); it!= n.end(); it++){
-        Cartesien tmp;
-        it->convertir(tmp);
+        Cartesien tmp = {};
+        (*it)->convertir(tmp);
         x = x+ tmp.getX();
         y = y+ tmp.getY();
     }
@@ -31,3 +31,4 @@ Cartesien barycentre(Nuage n){
 
     return c;
 }
+
