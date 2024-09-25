@@ -20,3 +20,6 @@ public:
         using const_iterator = std::vector<Point*>::const_iterator;
 
 };
+
+
+Cartesien barycentre(Nuage n);
