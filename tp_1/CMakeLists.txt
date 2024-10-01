@@ -19,7 +19,7 @@ set ( PROJECT_HEADERS
       src/nuage.hpp
       src/point.hpp
       src/polaire.hpp
-      #src/vecteur.hpp
+      src/myVector.hpp
     )
 
 set ( PROJECT_SOURCES
@@ -27,7 +27,7 @@ set ( PROJECT_SOURCES
       src/nuage.cpp
       src/point.cpp
       src/polaire.cpp
-      #src/vecteur.cpp
+      src/myVector.cpp
     )
 
 set ( TEST_HEADERS
@@ -68,3 +68,5 @@ target_link_libraries ( ${CMAKE_PROJECT_NAME}_vecteur PRIVATE common )
 add_executable ( ${CMAKE_PROJECT_NAME}_test test/${CMAKE_PROJECT_NAME}_test.cpp )
 
 target_link_libraries ( ${CMAKE_PROJECT_NAME}_test PRIVATE common test )
+
+add_link_options (-fsanitize=address)

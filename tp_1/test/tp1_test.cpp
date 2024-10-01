@@ -7,6 +7,7 @@
 #include <cartesien.hpp>
 #include <polaire.hpp>
 #include <nuage.hpp>
+#include <myVector.hpp>
 
 // Tests //-----------------------------------------------------------------------------------------
 
@@ -343,3 +344,49 @@ TEST_CASE ( "TP1_Nuage::BarycentrePolaire" ) {
 }
 
 // Fin //-------------------------------------------------------------------------------------------
+
+TEST_CASE("MY VECTOR"){
+
+    MyVector v;
+    for(int i = 0; i < 10; i++) v.append(i);
+    std::stringstream flux; 
+    flux<<v;
+    REQUIRE(flux.str() == "0 1 2 3 4 5 6 7 8 9 ");
+}
+
+TEST_CASE("MY VECTOR 2 []"){
+    MyVector v{};
+    for(int i = 0; i < 10; i++) v.append(i);
+    
+    REQUIRE( 0 == v[0]);
+    
+
+    v[3] = 99;
+    REQUIRE(v[3] == 99);
+}
+
+
+TEST_CASE("MY VECTOR 3 +"){
+    MyVector v{};
+    MyVector v2{};
+    MyVector v3{};
+    for(int i = 0; i < 10; i++) v.append(i);
+    for(int i = 0; i < 10; i++) v2.append(i);
+
+    v3=v + v2;
+    std::stringstream flux; 
+    flux<<v3;
+    REQUIRE(flux.str() == "0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 ");
+    
+}
+
+TEST_CASE("My Vector * "){
+    MyVector v{};
+    MyVector v2{};
+    for(int i = 0; i < 5; i++) v.append(i);
+    for(int i = 0; i < 10; i++) v2.append(i);
+
+    REQUIRE(65 == v*v2);
+    REQUIRE(65 == v2*v);
+    REQUIRE(285 == v2*v2);
+}
